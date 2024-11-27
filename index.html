@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌入 Botpress 聊天機器人</title>
+    <!-- 可選：加入簡單的 CSS 以美化頁面 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f7f9fc;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>歡迎來到我們的網站！</h1>
+    <p>點擊右下角的聊天按鈕，與我們的客服機器人互動。</p>
+
+    <!-- 引入 Botpress Webchat -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    
+    <!-- 引入自定義腳本 -->
+    <script src="https://files.bpcontent.cloud/2024/11/27/08/20241127081916-X5YATW7R.js"></script>
+    
+    <!-- 初始化 Webchat -->
+    <script>
+        // 初始化 Botpress Webchat
+        window.botpressWebChat.init({
+            hostUrl: "https://cdn.botpress.cloud/webchat",
+            botId: "your-bot-id", // 替換成你的機器人 ID
+            botName: "客服機器人", // 可選：聊天機器人的名稱
+            enableConversationDeletion: true, // 啟用刪除對話功能
+            enableReset: true, // 啟用重置功能
+            customStyle: {
+                botMessageBackground: "#e0f7fa", // 機器人訊息背景顏色
+                botMessageTextColor: "#00796b", // 機器人文字顏色
+                userMessageBackground: "#ffe082", // 使用者訊息背景顏色
+                userMessageTextColor: "#795548", // 使用者文字顏色
+            },
+            containerWidth: "400px", // 聊天框寬度
+        });
+    </script>
+</body>
+</html>
